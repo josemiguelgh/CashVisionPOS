@@ -6,7 +6,7 @@ Sample POS application made with WPF and MVVMLight to help developers who want t
 Application made with VS2012 and using SQL Server 2012.
 
 To start using the app just need to do the following:
-- Navigate to POS/sqlsripts and run the scripts:
+- Navigate to POS/sqlscripts and run the scripts:
   - PosDb01052014A (database and tables creation)
   - PosDbInitialization1 (Initial database configuration with some general data, could be changed according your needs)
   - PosDbDevInitProcedures (Stored procedure which creates some demo products)
