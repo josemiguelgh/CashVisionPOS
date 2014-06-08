@@ -1,0 +1,74 @@
+﻿<baseWindow:SingleInstanceWindow x:Class="CV.POS.Wpf.View.CashBox.CashBoxOpening"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        xmlns:baseWindow="clr-namespace:CV.POS.Wpf.View"
+        mc:Ignorable="d ignore"
+        DataContext="{Binding CashBoxOpening, Source={StaticResource Locator}}"
+        Height="600"
+        Width="800">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Apertura de Caja" HorizontalAlignment="Left" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" Grid.Row="1"  />
+        <Grid Grid.Column="1" Grid.Row="3"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Importe para Apertura" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource SubHeaderTextBlockStyle}" Grid.Column="0" Grid.Row="0" />
+            <TextBlock Text="Importe Verificado" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource SubHeaderTextBlockStyle}" Grid.Column="0" Grid.Row="1" />
+
+            <Label Content="{Binding CashBoxAmount}" ContentStringFormat="{}{0:F2}" Grid.Row="0" Grid.Column="2" Style="{StaticResource LabelMoneyDisabledPositioningStyle }"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding VerifiedAmount, ValidatesOnNotifyDataErrors=True, NotifyOnValidationError=True}"  Width="120" Style="{StaticResource TextBoxMoneyPositioningStyle }" TextWrapping="Wrap"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="4" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Aceptar" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding OpenCashboxCommand}"/>
+            <Button Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="ButtonCancelClick"/>
+            
+            
+            <!--<ContentControl 
+      Grid.Column="2"
+      
+      HorizontalAlignment="Left"
+      >
+                
+                        <TextBlock
+            Foreground="Red"
+            FontStyle="Italic"
+                            
+            Text="{Binding Path=(Validation.Errors).Count, PresentationTraceSources.TraceLevel=Medium}"
+            />
+                   
+            </ContentControl>-->
+        </Grid>
+    </Grid>
+</baseWindow:SingleInstanceWindow>

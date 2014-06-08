@@ -1,0 +1,82 @@
+<Application x:Class="CV.POS.Wpf.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="clr-namespace:CV.POS.Wpf.ViewModel" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" StartupUri="View\MainWindow.xaml" mc:Ignorable="d">
+  <Application.Resources>
+    <!--Global View Model Locator-->
+    <ResourceDictionary>
+      <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="#FF00AADE" />
+      </Style>
+      <Style x:Key="SubHeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="#FF00AADE" />
+      </Style>
+      <Style x:Key="SubHeaderLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="#FF00AADE" />
+      </Style>
+      <Style x:Key="SimpleLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="#000000" />
+      </Style>
+      <Style x:Key="DisabledStyle">
+        <Setter Property="Control.Foreground" Value="#FFB9B9B9" />
+      </Style>
+      <Style x:Key="MoneyDisabledPositioningStyle" BasedOn="{StaticResource DisabledStyle}">
+        <Setter Property="Control.HorizontalAlignment" Value="Right" />
+        <Setter Property="Control.VerticalAlignment" Value="Center" />
+      </Style>
+      <Style x:Key="MoneyPositioningStyle">
+        <Setter Property="Control.HorizontalAlignment" Value="Right" />
+        <Setter Property="Control.VerticalAlignment" Value="Center" />
+      </Style>
+      <Style x:Key="CommonPositioningStyle">
+        <Setter Property="Control.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.VerticalAlignment" Value="Center" />
+      </Style>
+      <Style x:Key="LabelMoneyDisabledPositioningStyle" BasedOn="{StaticResource MoneyDisabledPositioningStyle}" TargetType="Label">
+      </Style>
+      <Style x:Key="LabelMoneyPositioningStyle" BasedOn="{StaticResource MoneyPositioningStyle}" TargetType="Label">
+      </Style>
+      <Style x:Key="TextBoxMoneyPositioningStyle" BasedOn="{StaticResource MoneyPositioningStyle}" TargetType="TextBox">
+        <Setter Property="TextAlignment" Value="Right" />
+      </Style>
+      <Style x:Key="TextBoxCommonPositioningStyle" BasedOn="{StaticResource CommonPositioningStyle}" TargetType="TextBox">
+        <Setter Property="TextAlignment" Value="Left" />
+      </Style>
+      <Style x:Key="NumericGridValueStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+      </Style>
+      <!--BasedOn="{StaticResource BaseLabelStyle}"-->
+      <Style x:Key="LinkButton" TargetType="Button">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="Button">
+              <TextBlock TextDecorations="Underline">
+                <ContentPresenter />
+              </TextBlock>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="Blue" />
+        <Style.Triggers>
+          <Trigger Property="IsMouseOver" Value="true">
+            <Setter Property="Foreground" Value="Red" />
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Light Theme -->
+                <ResourceDictionary Source="Themes/Metro/Light/Metro.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/Metro/Light/Metro.MSControls.Toolkit.Implicit.xaml" />
+                <!--ViewModelLocator-->
+                <ResourceDictionary>
+                    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+  </Application.Resources>
+</Application>

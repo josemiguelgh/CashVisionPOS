@@ -1,0 +1,1882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="PosModelStoreContainer">
+          <EntitySet Name="Cashbox" EntityType="PosModel.Store.Cashbox" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CashboxStatus" EntityType="PosModel.Store.CashboxStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CashboxTestify" EntityType="PosModel.Store.CashboxTestify" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CashMovement" EntityType="PosModel.Store.CashMovement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="PosModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="PosModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Division" EntityType="PosModel.Store.Division" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="PosModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GeneralConfigValues" EntityType="PosModel.Store.GeneralConfigValues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MiscVariant" EntityType="PosModel.Store.MiscVariant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="PosModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Premise" EntityType="PosModel.Store.Premise" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="PosModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductBase" EntityType="PosModel.Store.ProductBase" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductMovement" EntityType="PosModel.Store.ProductMovement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductPremise" EntityType="PosModel.Store.ProductPremise" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductPremiseStatus" EntityType="PosModel.Store.ProductPremiseStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductUnit" EntityType="PosModel.Store.ProductUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sale" EntityType="PosModel.Store.Sale" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SaleDetails" EntityType="PosModel.Store.SaleDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SaleDocument" EntityType="PosModel.Store.SaleDocument" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Session" EntityType="PosModel.Store.Session" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemRole" EntityType="PosModel.Store.SystemRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Unit" EntityType="PosModel.Store.Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UnitEquivalence" EntityType="PosModel.Store.UnitEquivalence" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="PosModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserSystemRole" EntityType="PosModel.Store.UserSystemRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="R_10" Association="PosModel.Store.R_10">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+          </AssociationSet>
+          <AssociationSet Name="R_100" Association="PosModel.Store.R_100">
+            <End Role="MiscVariant" EntitySet="MiscVariant" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="R_101" Association="PosModel.Store.R_101">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductUnit" EntitySet="ProductUnit" />
+          </AssociationSet>
+          <AssociationSet Name="R_102" Association="PosModel.Store.R_102">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="ProductUnit" EntitySet="ProductUnit" />
+          </AssociationSet>
+          <AssociationSet Name="R_11" Association="PosModel.Store.R_11">
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+            <End Role="ProductPremiseStatus" EntitySet="ProductPremiseStatus" />
+          </AssociationSet>
+          <AssociationSet Name="R_17" Association="PosModel.Store.R_17">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Premise" EntitySet="Premise" />
+          </AssociationSet>
+          <AssociationSet Name="R_2" Association="PosModel.Store.R_2">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="R_20" Association="PosModel.Store.R_20">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Division" EntitySet="Division" />
+          </AssociationSet>
+          <AssociationSet Name="R_28" Association="PosModel.Store.R_28">
+            <End Role="ProductBase" EntitySet="ProductBase" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="R_3" Association="PosModel.Store.R_3">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="R_33" Association="PosModel.Store.R_33">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+          </AssociationSet>
+          <AssociationSet Name="R_35" Association="PosModel.Store.R_35">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="Session" EntitySet="Session" />
+          </AssociationSet>
+          <AssociationSet Name="R_36" Association="PosModel.Store.R_36">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="Cashbox" EntitySet="Cashbox" />
+          </AssociationSet>
+          <AssociationSet Name="R_38" Association="PosModel.Store.R_38">
+            <End Role="CashboxStatus" EntitySet="CashboxStatus" />
+            <End Role="CashboxTestify" EntitySet="CashboxTestify" />
+          </AssociationSet>
+          <AssociationSet Name="R_39" Association="PosModel.Store.R_39">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CashboxTestify" EntitySet="CashboxTestify" />
+          </AssociationSet>
+          <AssociationSet Name="R_4" Association="PosModel.Store.R_4">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="R_41" Association="PosModel.Store.R_41">
+            <End Role="Cashbox" EntitySet="Cashbox" />
+            <End Role="CashMovement" EntitySet="CashMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_43" Association="PosModel.Store.R_43">
+            <End Role="Cashbox" EntitySet="Cashbox" />
+            <End Role="CashboxStatus" EntitySet="CashboxStatus" />
+          </AssociationSet>
+          <AssociationSet Name="R_46" Association="PosModel.Store.R_46">
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+            <End Role="SaleDetails" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="R_47" Association="PosModel.Store.R_47">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+          </AssociationSet>
+          <AssociationSet Name="R_48" Association="PosModel.Store.R_48">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CashMovement" EntitySet="CashMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_50" Association="PosModel.Store.R_50">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="R_52" Association="PosModel.Store.R_52">
+            <End Role="CashMovement" EntitySet="CashMovement" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="R_56" Association="PosModel.Store.R_56">
+            <End Role="ProductMovement" EntitySet="ProductMovement" />
+            <End Role="SaleDetails" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="R_57" Association="PosModel.Store.R_57">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="ProductMovement" EntitySet="ProductMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_6" Association="PosModel.Store.R_6">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserSystemRole" EntitySet="UserSystemRole" />
+          </AssociationSet>
+          <AssociationSet Name="R_7" Association="PosModel.Store.R_7">
+            <End Role="SystemRole" EntitySet="SystemRole" />
+            <End Role="UserSystemRole" EntitySet="UserSystemRole" />
+          </AssociationSet>
+          <AssociationSet Name="R_8" Association="PosModel.Store.R_8">
+            <End Role="User" EntitySet="User" />
+            <End Role="Session" EntitySet="Session" />
+          </AssociationSet>
+          <AssociationSet Name="R_9" Association="PosModel.Store.R_9">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cashbox">
+          <Key>
+            <PropertyRef Name="CashboxId" />
+          </Key>
+          <Property Name="CashboxId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PremiseId" Type="tinyint" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="CurrentAmount" Type="decimal" Nullable="false" Precision="13" Scale="4" />
+        </EntityType>
+        <EntityType Name="CashboxStatus">
+          <Key>
+            <PropertyRef Name="CBStatusId" />
+          </Key>
+          <Property Name="CBStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BeginDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="StartAmount" Type="decimal" Nullable="false" Precision="13" Scale="4" />
+          <Property Name="EndAmount" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="CashboxId" Type="tinyint" />
+          <Property Name="UserId" Type="smallint" />
+        </EntityType>
+        <EntityType Name="CashboxTestify">
+          <Key>
+            <PropertyRef Name="CashboxTestifyId" />
+          </Key>
+          <Property Name="CashboxId" Type="tinyint" />
+          <Property Name="CashboxTestifyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TestifyDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="smallint" />
+          <Property Name="AmountChecked" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="Difference" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="SessionId" Type="int" />
+          <Property Name="CBStatusId" Type="int" />
+        </EntityType>
+        <EntityType Name="CashMovement">
+          <Key>
+            <PropertyRef Name="CashMovementId" />
+          </Key>
+          <Property Name="CashboxId" Type="tinyint" Nullable="false" />
+          <Property Name="CashMovementId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MovementDate" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="13" Scale="4" />
+          <Property Name="MovementType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MovementStatus" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SessionId" Type="int" Nullable="false" />
+          <Property Name="MovementCategory" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="RUC" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="PersonId" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RUC" Type="varchar" MaxLength="20" />
+          <Property Name="LegalName" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerType" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="DivisionId" />
+          </Key>
+          <Property Name="DivisionId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="tinyint" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PersonId" Type="int" />
+        </EntityType>
+        <EntityType Name="GeneralConfigValues">
+          <Key>
+            <PropertyRef Name="ConfigId" />
+          </Key>
+          <Property Name="ConfigId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MiscVariant">
+          <Key>
+            <PropertyRef Name="MiscVariantId" />
+          </Key>
+          <Property Name="MiscVariantId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DocNumber" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Premise">
+          <Key>
+            <PropertyRef Name="PremiseId" />
+          </Key>
+          <Property Name="DivisionId" Type="tinyint" />
+          <Property Name="PremiseId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="PremiseType" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductBaseId" Type="smallint" />
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MiscVariantId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="ProductBase">
+          <Key>
+            <PropertyRef Name="ProductBaseId" />
+          </Key>
+          <Property Name="ProductBaseId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="SaleDefaultUnitAbbr" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ProductMovement">
+          <Key>
+            <PropertyRef Name="ProductMovementId" />
+          </Key>
+          <Property Name="ProductMovementId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PremiseId" Type="tinyint" Nullable="false" />
+          <Property Name="MovementType" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MovementCategory" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UnitId" Type="tinyint" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="MovementDate" Type="datetime" Nullable="false" />
+          <Property Name="SessionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductPremise">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="PremiseId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="PremiseId" Type="tinyint" Nullable="false" />
+          <Property Name="CurrentStock" Type="int" />
+          <Property Name="MinimunStock" Type="int" />
+          <Property Name="StockDefaultUnitAbbr" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ProductPremiseStatus">
+          <Key>
+            <PropertyRef Name="PPStatusId" />
+          </Key>
+          <Property Name="PPStatusId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BeginDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="StartQuantity" Type="int" />
+          <Property Name="EndQuantity" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="PremiseId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="ProductUnit">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UnitId" Type="tinyint" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="SalePrice" Type="decimal" Nullable="false" Precision="13" Scale="4" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="SessionId" Type="int" />
+          <Property Name="CashMovementId" Type="int" />
+        </EntityType>
+        <EntityType Name="SaleDetails">
+          <Key>
+            <PropertyRef Name="SaleDetailId" />
+          </Key>
+          <Property Name="SaleDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="smallint" />
+          <Property Name="SinglePrice" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="TotalPrice" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="SaleId" Type="int" />
+          <Property Name="ProductMovementId" Type="int" />
+        </EntityType>
+        <EntityType Name="SaleDocument">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="Date" Type="date" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="200" />
+          <Property Name="RUC" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="Number" Type="varchar" MaxLength="30" />
+          <Property Name="SubTotal" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="IGV" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="Total" Type="decimal" Precision="13" Scale="4" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="10" />
+          <Property Name="SaleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="UserId" Type="smallint" />
+          <Property Name="SessionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="PremiseId" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SystemRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Abbreviation" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="UnitEquivalence">
+          <Key>
+            <PropertyRef Name="UnitEquivalenceId" />
+          </Key>
+          <Property Name="UnitEquivalenceId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LowerUnitAbbr" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="HigherUnitAbbr" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="EquivalenceFactor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="UserId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+          <Property Name="DefaultPremise" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserSystemRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="smallint" Nullable="false" />
+          <Property Name="RoleId" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="R_10">
+          <End Role="Premise" Type="PosModel.Store.Premise" Multiplicity="1" />
+          <End Role="ProductPremise" Type="PosModel.Store.ProductPremise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductPremise">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_100">
+          <End Role="MiscVariant" Type="PosModel.Store.MiscVariant" Multiplicity="0..1" />
+          <End Role="Product" Type="PosModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MiscVariant">
+              <PropertyRef Name="MiscVariantId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="MiscVariantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_101">
+          <End Role="Product" Type="PosModel.Store.Product" Multiplicity="1" />
+          <End Role="ProductUnit" Type="PosModel.Store.ProductUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductUnit">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_102">
+          <End Role="Unit" Type="PosModel.Store.Unit" Multiplicity="1" />
+          <End Role="ProductUnit" Type="PosModel.Store.ProductUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="ProductUnit">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_11">
+          <End Role="ProductPremise" Type="PosModel.Store.ProductPremise" Multiplicity="0..1" />
+          <End Role="ProductPremiseStatus" Type="PosModel.Store.ProductPremiseStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductPremise">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductPremiseStatus">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_17">
+          <End Role="Division" Type="PosModel.Store.Division" Multiplicity="0..1" />
+          <End Role="Premise" Type="PosModel.Store.Premise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="DivisionId" />
+            </Principal>
+            <Dependent Role="Premise">
+              <PropertyRef Name="DivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_2">
+          <End Role="Employee" Type="PosModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="User" Type="PosModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_20">
+          <End Role="Company" Type="PosModel.Store.Company" Multiplicity="0..1" />
+          <End Role="Division" Type="PosModel.Store.Division" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Division">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_28">
+          <End Role="ProductBase" Type="PosModel.Store.ProductBase" Multiplicity="0..1" />
+          <End Role="Product" Type="PosModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductBase">
+              <PropertyRef Name="ProductBaseId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductBaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_3">
+          <End Role="Person" Type="PosModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Customer" Type="PosModel.Store.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_33">
+          <End Role="Customer" Type="PosModel.Store.Customer" Multiplicity="0..1" />
+          <End Role="SaleDocument" Type="PosModel.Store.SaleDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="SaleDocument">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_35">
+          <End Role="Premise" Type="PosModel.Store.Premise" Multiplicity="0..1" />
+          <End Role="Session" Type="PosModel.Store.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_36">
+          <End Role="Premise" Type="PosModel.Store.Premise" Multiplicity="0..1" />
+          <End Role="Cashbox" Type="PosModel.Store.Cashbox" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="Cashbox">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_38">
+          <End Role="CashboxStatus" Type="PosModel.Store.CashboxStatus" Multiplicity="0..1" />
+          <End Role="CashboxTestify" Type="PosModel.Store.CashboxTestify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashboxStatus">
+              <PropertyRef Name="CBStatusId" />
+            </Principal>
+            <Dependent Role="CashboxTestify">
+              <PropertyRef Name="CBStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_39">
+          <End Role="Session" Type="PosModel.Store.Session" Multiplicity="0..1" />
+          <End Role="CashboxTestify" Type="PosModel.Store.CashboxTestify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="CashboxTestify">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_4">
+          <End Role="Person" Type="PosModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Employee" Type="PosModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_41">
+          <End Role="Cashbox" Type="PosModel.Store.Cashbox" Multiplicity="1" />
+          <End Role="CashMovement" Type="PosModel.Store.CashMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cashbox">
+              <PropertyRef Name="CashboxId" />
+            </Principal>
+            <Dependent Role="CashMovement">
+              <PropertyRef Name="CashboxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_43">
+          <End Role="Cashbox" Type="PosModel.Store.Cashbox" Multiplicity="0..1" />
+          <End Role="CashboxStatus" Type="PosModel.Store.CashboxStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cashbox">
+              <PropertyRef Name="CashboxId" />
+            </Principal>
+            <Dependent Role="CashboxStatus">
+              <PropertyRef Name="CashboxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_46">
+          <End Role="SaleDocument" Type="PosModel.Store.SaleDocument" Multiplicity="0..1" />
+          <End Role="SaleDetails" Type="PosModel.Store.SaleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleDocument">
+              <PropertyRef Name="SaleId" />
+            </Principal>
+            <Dependent Role="SaleDetails">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_47">
+          <End Role="Sale" Type="PosModel.Store.Sale" Multiplicity="1" />
+          <End Role="SaleDocument" Type="PosModel.Store.SaleDocument" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="SaleId" />
+            </Principal>
+            <Dependent Role="SaleDocument">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_48">
+          <End Role="Session" Type="PosModel.Store.Session" Multiplicity="1" />
+          <End Role="CashMovement" Type="PosModel.Store.CashMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="CashMovement">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_50">
+          <End Role="Session" Type="PosModel.Store.Session" Multiplicity="0..1" />
+          <End Role="Sale" Type="PosModel.Store.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_52">
+          <End Role="CashMovement" Type="PosModel.Store.CashMovement" Multiplicity="0..1" />
+          <End Role="Sale" Type="PosModel.Store.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashMovement">
+              <PropertyRef Name="CashMovementId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="CashMovementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_56">
+          <End Role="ProductMovement" Type="PosModel.Store.ProductMovement" Multiplicity="0..1" />
+          <End Role="SaleDetails" Type="PosModel.Store.SaleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductMovement">
+              <PropertyRef Name="ProductMovementId" />
+            </Principal>
+            <Dependent Role="SaleDetails">
+              <PropertyRef Name="ProductMovementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_57">
+          <End Role="Premise" Type="PosModel.Store.Premise" Multiplicity="1" />
+          <End Role="ProductMovement" Type="PosModel.Store.ProductMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductMovement">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_6">
+          <End Role="User" Type="PosModel.Store.User" Multiplicity="1" />
+          <End Role="UserSystemRole" Type="PosModel.Store.UserSystemRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserSystemRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_7">
+          <End Role="SystemRole" Type="PosModel.Store.SystemRole" Multiplicity="1" />
+          <End Role="UserSystemRole" Type="PosModel.Store.UserSystemRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemRole">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserSystemRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_8">
+          <End Role="User" Type="PosModel.Store.User" Multiplicity="0..1" />
+          <End Role="Session" Type="PosModel.Store.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_9">
+          <End Role="Product" Type="PosModel.Store.Product" Multiplicity="1" />
+          <End Role="ProductPremise" Type="PosModel.Store.ProductPremise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductPremise">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PosModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PosDbContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Cashbox" EntityType="PosModel.Cashbox" />
+          <EntitySet Name="CashboxStatus" EntityType="PosModel.CashboxStatus" />
+          <EntitySet Name="CashboxTestify" EntityType="PosModel.CashboxTestify" />
+          <EntitySet Name="CashMovement" EntityType="PosModel.CashMovement" />
+          <EntitySet Name="Company" EntityType="PosModel.Company" />
+          <EntitySet Name="Customer" EntityType="PosModel.Customer" />
+          <EntitySet Name="Division" EntityType="PosModel.Division" />
+          <EntitySet Name="Employee" EntityType="PosModel.Employee" />
+          <EntitySet Name="GeneralConfigValues" EntityType="PosModel.GeneralConfigValues" />
+          <EntitySet Name="MiscVariant" EntityType="PosModel.MiscVariant" />
+          <EntitySet Name="Person" EntityType="PosModel.Person" />
+          <EntitySet Name="Premise" EntityType="PosModel.Premise" />
+          <EntitySet Name="Product" EntityType="PosModel.Product" />
+          <EntitySet Name="ProductBase" EntityType="PosModel.ProductBase" />
+          <EntitySet Name="ProductMovement" EntityType="PosModel.ProductMovement" />
+          <EntitySet Name="ProductPremise" EntityType="PosModel.ProductPremise" />
+          <EntitySet Name="ProductPremiseStatus" EntityType="PosModel.ProductPremiseStatus" />
+          <EntitySet Name="ProductUnit" EntityType="PosModel.ProductUnit" />
+          <EntitySet Name="Sale" EntityType="PosModel.Sale" />
+          <EntitySet Name="SaleDetails" EntityType="PosModel.SaleDetails" />
+          <EntitySet Name="SaleDocument" EntityType="PosModel.SaleDocument" />
+          <EntitySet Name="Session" EntityType="PosModel.Session" />
+          <EntitySet Name="SystemRole" EntityType="PosModel.SystemRole" />
+          <EntitySet Name="Unit" EntityType="PosModel.Unit" />
+          <EntitySet Name="UnitEquivalence" EntityType="PosModel.UnitEquivalence" />
+          <EntitySet Name="User" EntityType="PosModel.User" />
+          <AssociationSet Name="R_36" Association="PosModel.R_36">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="Cashbox" EntitySet="Cashbox" />
+          </AssociationSet>
+          <AssociationSet Name="R_41" Association="PosModel.R_41">
+            <End Role="Cashbox" EntitySet="Cashbox" />
+            <End Role="CashMovement" EntitySet="CashMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_43" Association="PosModel.R_43">
+            <End Role="Cashbox" EntitySet="Cashbox" />
+            <End Role="CashboxStatus" EntitySet="CashboxStatus" />
+          </AssociationSet>
+          <AssociationSet Name="R_38" Association="PosModel.R_38">
+            <End Role="CashboxStatus" EntitySet="CashboxStatus" />
+            <End Role="CashboxTestify" EntitySet="CashboxTestify" />
+          </AssociationSet>
+          <AssociationSet Name="R_39" Association="PosModel.R_39">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CashboxTestify" EntitySet="CashboxTestify" />
+          </AssociationSet>
+          <AssociationSet Name="R_48" Association="PosModel.R_48">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="CashMovement" EntitySet="CashMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_52" Association="PosModel.R_52">
+            <End Role="CashMovement" EntitySet="CashMovement" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="R_20" Association="PosModel.R_20">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Division" EntitySet="Division" />
+          </AssociationSet>
+          <AssociationSet Name="R_3" Association="PosModel.R_3">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="R_33" Association="PosModel.R_33">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+          </AssociationSet>
+          <AssociationSet Name="R_17" Association="PosModel.R_17">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Premise" EntitySet="Premise" />
+          </AssociationSet>
+          <AssociationSet Name="R_2" Association="PosModel.R_2">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="R_4" Association="PosModel.R_4">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="R_100" Association="PosModel.R_100">
+            <End Role="MiscVariant" EntitySet="MiscVariant" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="R_10" Association="PosModel.R_10">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+          </AssociationSet>
+          <AssociationSet Name="R_35" Association="PosModel.R_35">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="Session" EntitySet="Session" />
+          </AssociationSet>
+          <AssociationSet Name="R_57" Association="PosModel.R_57">
+            <End Role="Premise" EntitySet="Premise" />
+            <End Role="ProductMovement" EntitySet="ProductMovement" />
+          </AssociationSet>
+          <AssociationSet Name="R_101" Association="PosModel.R_101">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductUnit" EntitySet="ProductUnit" />
+          </AssociationSet>
+          <AssociationSet Name="R_28" Association="PosModel.R_28">
+            <End Role="ProductBase" EntitySet="ProductBase" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="R_9" Association="PosModel.R_9">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+          </AssociationSet>
+          <AssociationSet Name="R_56" Association="PosModel.R_56">
+            <End Role="ProductMovement" EntitySet="ProductMovement" />
+            <End Role="SaleDetails" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="R_11" Association="PosModel.R_11">
+            <End Role="ProductPremise" EntitySet="ProductPremise" />
+            <End Role="ProductPremiseStatus" EntitySet="ProductPremiseStatus" />
+          </AssociationSet>
+          <AssociationSet Name="R_102" Association="PosModel.R_102">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="ProductUnit" EntitySet="ProductUnit" />
+          </AssociationSet>
+          <AssociationSet Name="R_47" Association="PosModel.R_47">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+          </AssociationSet>
+          <AssociationSet Name="R_50" Association="PosModel.R_50">
+            <End Role="Session" EntitySet="Session" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+          <AssociationSet Name="R_46" Association="PosModel.R_46">
+            <End Role="SaleDocument" EntitySet="SaleDocument" />
+            <End Role="SaleDetails" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="R_8" Association="PosModel.R_8">
+            <End Role="User" EntitySet="User" />
+            <End Role="Session" EntitySet="Session" />
+          </AssociationSet>
+          <AssociationSet Name="UserSystemRole" Association="PosModel.UserSystemRole">
+            <End Role="User" EntitySet="User" />
+            <End Role="SystemRole" EntitySet="SystemRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cashbox">
+          <Key>
+            <PropertyRef Name="CashboxId" />
+          </Key>
+          <Property Name="CashboxId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PremiseId" Type="Byte" />
+          <Property Name="Name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CurrentAmount" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+          <NavigationProperty Name="Premise" Relationship="PosModel.R_36" FromRole="Cashbox" ToRole="Premise" />
+          <NavigationProperty Name="CashMovement" Relationship="PosModel.R_41" FromRole="Cashbox" ToRole="CashMovement" />
+          <NavigationProperty Name="CashboxStatus" Relationship="PosModel.R_43" FromRole="Cashbox" ToRole="CashboxStatus" />
+        </EntityType>
+        <EntityType Name="CashboxStatus">
+          <Key>
+            <PropertyRef Name="CBStatusId" />
+          </Key>
+          <Property Name="CBStatusId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BeginDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="StartAmount" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+          <Property Name="EndAmount" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="CashboxId" Type="Byte" />
+          <Property Name="UserId" Type="Int16" />
+          <NavigationProperty Name="Cashbox" Relationship="PosModel.R_43" FromRole="CashboxStatus" ToRole="Cashbox" />
+          <NavigationProperty Name="CashboxTestify" Relationship="PosModel.R_38" FromRole="CashboxStatus" ToRole="CashboxTestify" />
+        </EntityType>
+        <EntityType Name="CashboxTestify">
+          <Key>
+            <PropertyRef Name="CashboxTestifyId" />
+          </Key>
+          <Property Name="CashboxId" Type="Byte" />
+          <Property Name="CashboxTestifyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TestifyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Int16" />
+          <Property Name="AmountChecked" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="Difference" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="SessionId" Type="Int32" />
+          <Property Name="CBStatusId" Type="Int32" />
+          <NavigationProperty Name="CashboxStatus" Relationship="PosModel.R_38" FromRole="CashboxTestify" ToRole="CashboxStatus" />
+          <NavigationProperty Name="Session" Relationship="PosModel.R_39" FromRole="CashboxTestify" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="CashMovement">
+          <Key>
+            <PropertyRef Name="CashMovementId" />
+          </Key>
+          <Property Name="CashboxId" Type="Byte" Nullable="false" />
+          <Property Name="CashMovementId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MovementDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+          <Property Name="MovementType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MovementStatus" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SessionId" Type="Int32" Nullable="false" />
+          <Property Name="MovementCategory" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cashbox" Relationship="PosModel.R_41" FromRole="CashMovement" ToRole="Cashbox" />
+          <NavigationProperty Name="Session" Relationship="PosModel.R_48" FromRole="CashMovement" ToRole="Session" />
+          <NavigationProperty Name="Sale" Relationship="PosModel.R_52" FromRole="CashMovement" ToRole="Sale" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RUC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Division" Relationship="PosModel.R_20" FromRole="Company" ToRole="Division" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="PersonId" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RUC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LegalName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CustomerType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Person" Relationship="PosModel.R_3" FromRole="Customer" ToRole="Person" />
+          <NavigationProperty Name="SaleDocument" Relationship="PosModel.R_33" FromRole="Customer" ToRole="SaleDocument" />
+        </EntityType>
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="DivisionId" />
+          </Key>
+          <Property Name="DivisionId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Byte" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Company" Relationship="PosModel.R_20" FromRole="Division" ToRole="Company" />
+          <NavigationProperty Name="Premise" Relationship="PosModel.R_17" FromRole="Division" ToRole="Premise" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="PosModel.R_2" FromRole="Employee" ToRole="User" />
+          <NavigationProperty Name="Person" Relationship="PosModel.R_4" FromRole="Employee" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="GeneralConfigValues">
+          <Key>
+            <PropertyRef Name="ConfigId" />
+          </Key>
+          <Property Name="ConfigId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MiscVariant">
+          <Key>
+            <PropertyRef Name="MiscVariantId" />
+          </Key>
+          <Property Name="MiscVariantId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="PosModel.R_100" FromRole="MiscVariant" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DocNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Customer" Relationship="PosModel.R_3" FromRole="Person" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="PosModel.R_4" FromRole="Person" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Premise">
+          <Key>
+            <PropertyRef Name="PremiseId" />
+          </Key>
+          <Property Name="DivisionId" Type="Byte" />
+          <Property Name="PremiseId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PremiseType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cashbox" Relationship="PosModel.R_36" FromRole="Premise" ToRole="Cashbox" />
+          <NavigationProperty Name="Division" Relationship="PosModel.R_17" FromRole="Premise" ToRole="Division" />
+          <NavigationProperty Name="ProductPremise" Relationship="PosModel.R_10" FromRole="Premise" ToRole="ProductPremise" />
+          <NavigationProperty Name="Session" Relationship="PosModel.R_35" FromRole="Premise" ToRole="Session" />
+          <NavigationProperty Name="ProductMovement" Relationship="PosModel.R_57" FromRole="Premise" ToRole="ProductMovement" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductBaseId" Type="Int16" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MiscVariantId" Type="Byte" />
+          <NavigationProperty Name="MiscVariant" Relationship="PosModel.R_100" FromRole="Product" ToRole="MiscVariant" />
+          <NavigationProperty Name="ProductUnit" Relationship="PosModel.R_101" FromRole="Product" ToRole="ProductUnit" />
+          <NavigationProperty Name="ProductBase" Relationship="PosModel.R_28" FromRole="Product" ToRole="ProductBase" />
+          <NavigationProperty Name="ProductPremise" Relationship="PosModel.R_9" FromRole="Product" ToRole="ProductPremise" />
+        </EntityType>
+        <EntityType Name="ProductBase">
+          <Key>
+            <PropertyRef Name="ProductBaseId" />
+          </Key>
+          <Property Name="ProductBaseId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SaleDefaultUnitAbbr" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="PosModel.R_28" FromRole="ProductBase" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductMovement">
+          <Key>
+            <PropertyRef Name="ProductMovementId" />
+          </Key>
+          <Property Name="ProductMovementId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PremiseId" Type="Byte" Nullable="false" />
+          <Property Name="MovementType" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MovementCategory" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UnitId" Type="Byte" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="MovementDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SessionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Premise" Relationship="PosModel.R_57" FromRole="ProductMovement" ToRole="Premise" />
+          <NavigationProperty Name="SaleDetails" Relationship="PosModel.R_56" FromRole="ProductMovement" ToRole="SaleDetails" />
+        </EntityType>
+        <EntityType Name="ProductPremise">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="PremiseId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="PremiseId" Type="Byte" Nullable="false" />
+          <Property Name="CurrentStock" Type="Int32" />
+          <Property Name="MinimunStock" Type="Int32" />
+          <Property Name="StockDefaultUnitAbbr" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Premise" Relationship="PosModel.R_10" FromRole="ProductPremise" ToRole="Premise" />
+          <NavigationProperty Name="Product" Relationship="PosModel.R_9" FromRole="ProductPremise" ToRole="Product" />
+          <NavigationProperty Name="ProductPremiseStatus" Relationship="PosModel.R_11" FromRole="ProductPremise" ToRole="ProductPremiseStatus" />
+        </EntityType>
+        <EntityType Name="ProductPremiseStatus">
+          <Key>
+            <PropertyRef Name="PPStatusId" />
+          </Key>
+          <Property Name="PPStatusId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BeginDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="StartQuantity" Type="Int32" />
+          <Property Name="EndQuantity" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="PremiseId" Type="Byte" />
+          <NavigationProperty Name="ProductPremise" Relationship="PosModel.R_11" FromRole="ProductPremiseStatus" ToRole="ProductPremise" />
+        </EntityType>
+        <EntityType Name="ProductUnit">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UnitId" Type="Byte" Nullable="false" />
+          <Property Name="CostPrice" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="SalePrice" Type="Decimal" Nullable="false" Precision="13" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="PosModel.R_101" FromRole="ProductUnit" ToRole="Product" />
+          <NavigationProperty Name="Unit" Relationship="PosModel.R_102" FromRole="ProductUnit" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SessionId" Type="Int32" />
+          <Property Name="CashMovementId" Type="Int32" />
+          <NavigationProperty Name="CashMovement" Relationship="PosModel.R_52" FromRole="Sale" ToRole="CashMovement" />
+          <NavigationProperty Name="SaleDocument" Relationship="PosModel.R_47" FromRole="Sale" ToRole="SaleDocument" />
+          <NavigationProperty Name="Session" Relationship="PosModel.R_50" FromRole="Sale" ToRole="Session" />
+        </EntityType>
+        <EntityType Name="SaleDetails">
+          <Key>
+            <PropertyRef Name="SaleDetailId" />
+          </Key>
+          <Property Name="SaleDetailId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="Int16" />
+          <Property Name="SinglePrice" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="SaleId" Type="Int32" />
+          <Property Name="ProductMovementId" Type="Int32" />
+          <NavigationProperty Name="ProductMovement" Relationship="PosModel.R_56" FromRole="SaleDetails" ToRole="ProductMovement" />
+          <NavigationProperty Name="SaleDocument" Relationship="PosModel.R_46" FromRole="SaleDetails" ToRole="SaleDocument" />
+        </EntityType>
+        <EntityType Name="SaleDocument">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="RUC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Number" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="SubTotal" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="IGV" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="Total" Type="Decimal" Precision="13" Scale="4" />
+          <Property Name="DocumentType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SaleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="PosModel.R_33" FromRole="SaleDocument" ToRole="Customer" />
+          <NavigationProperty Name="Sale" Relationship="PosModel.R_47" FromRole="SaleDocument" ToRole="Sale" />
+          <NavigationProperty Name="SaleDetails" Relationship="PosModel.R_46" FromRole="SaleDocument" ToRole="SaleDetails" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="UserId" Type="Int16" />
+          <Property Name="SessionId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="PremiseId" Type="Byte" />
+          <NavigationProperty Name="CashboxTestify" Relationship="PosModel.R_39" FromRole="Session" ToRole="CashboxTestify" />
+          <NavigationProperty Name="CashMovement" Relationship="PosModel.R_48" FromRole="Session" ToRole="CashMovement" />
+          <NavigationProperty Name="Premise" Relationship="PosModel.R_35" FromRole="Session" ToRole="Premise" />
+          <NavigationProperty Name="Sale" Relationship="PosModel.R_50" FromRole="Session" ToRole="Sale" />
+          <NavigationProperty Name="User" Relationship="PosModel.R_8" FromRole="Session" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SystemRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="PosModel.UserSystemRole" FromRole="SystemRole" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Abbreviation" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProductUnit" Relationship="PosModel.R_102" FromRole="Unit" ToRole="ProductUnit" />
+        </EntityType>
+        <EntityType Name="UnitEquivalence">
+          <Key>
+            <PropertyRef Name="UnitEquivalenceId" />
+          </Key>
+          <Property Name="UnitEquivalenceId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LowerUnitAbbr" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HigherUnitAbbr" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EquivalenceFactor" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="UserId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DefaultPremise" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="PosModel.R_2" FromRole="User" ToRole="Employee" />
+          <NavigationProperty Name="Session" Relationship="PosModel.R_8" FromRole="User" ToRole="Session" />
+          <NavigationProperty Name="SystemRole" Relationship="PosModel.UserSystemRole" FromRole="User" ToRole="SystemRole" />
+        </EntityType>
+        <Association Name="R_36">
+          <End Role="Premise" Type="PosModel.Premise" Multiplicity="0..1" />
+          <End Role="Cashbox" Type="PosModel.Cashbox" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="Cashbox">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_41">
+          <End Role="Cashbox" Type="PosModel.Cashbox" Multiplicity="1" />
+          <End Role="CashMovement" Type="PosModel.CashMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cashbox">
+              <PropertyRef Name="CashboxId" />
+            </Principal>
+            <Dependent Role="CashMovement">
+              <PropertyRef Name="CashboxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_43">
+          <End Role="Cashbox" Type="PosModel.Cashbox" Multiplicity="0..1" />
+          <End Role="CashboxStatus" Type="PosModel.CashboxStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cashbox">
+              <PropertyRef Name="CashboxId" />
+            </Principal>
+            <Dependent Role="CashboxStatus">
+              <PropertyRef Name="CashboxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_38">
+          <End Role="CashboxStatus" Type="PosModel.CashboxStatus" Multiplicity="0..1" />
+          <End Role="CashboxTestify" Type="PosModel.CashboxTestify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashboxStatus">
+              <PropertyRef Name="CBStatusId" />
+            </Principal>
+            <Dependent Role="CashboxTestify">
+              <PropertyRef Name="CBStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_39">
+          <End Role="Session" Type="PosModel.Session" Multiplicity="0..1" />
+          <End Role="CashboxTestify" Type="PosModel.CashboxTestify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="CashboxTestify">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_48">
+          <End Role="Session" Type="PosModel.Session" Multiplicity="1" />
+          <End Role="CashMovement" Type="PosModel.CashMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="CashMovement">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_52">
+          <End Role="CashMovement" Type="PosModel.CashMovement" Multiplicity="0..1" />
+          <End Role="Sale" Type="PosModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CashMovement">
+              <PropertyRef Name="CashMovementId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="CashMovementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_20">
+          <End Role="Company" Type="PosModel.Company" Multiplicity="0..1" />
+          <End Role="Division" Type="PosModel.Division" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Division">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_3">
+          <End Role="Person" Type="PosModel.Person" Multiplicity="0..1" />
+          <End Role="Customer" Type="PosModel.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_33">
+          <End Role="Customer" Type="PosModel.Customer" Multiplicity="0..1" />
+          <End Role="SaleDocument" Type="PosModel.SaleDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="SaleDocument">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_17">
+          <End Role="Division" Type="PosModel.Division" Multiplicity="0..1" />
+          <End Role="Premise" Type="PosModel.Premise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="DivisionId" />
+            </Principal>
+            <Dependent Role="Premise">
+              <PropertyRef Name="DivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_2">
+          <End Role="Employee" Type="PosModel.Employee" Multiplicity="0..1" />
+          <End Role="User" Type="PosModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_4">
+          <End Role="Person" Type="PosModel.Person" Multiplicity="0..1" />
+          <End Role="Employee" Type="PosModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_100">
+          <End Role="MiscVariant" Type="PosModel.MiscVariant" Multiplicity="0..1" />
+          <End Role="Product" Type="PosModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MiscVariant">
+              <PropertyRef Name="MiscVariantId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="MiscVariantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_10">
+          <End Role="Premise" Type="PosModel.Premise" Multiplicity="1" />
+          <End Role="ProductPremise" Type="PosModel.ProductPremise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductPremise">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_35">
+          <End Role="Premise" Type="PosModel.Premise" Multiplicity="0..1" />
+          <End Role="Session" Type="PosModel.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_57">
+          <End Role="Premise" Type="PosModel.Premise" Multiplicity="1" />
+          <End Role="ProductMovement" Type="PosModel.ProductMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Premise">
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductMovement">
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_101">
+          <End Role="Product" Type="PosModel.Product" Multiplicity="1" />
+          <End Role="ProductUnit" Type="PosModel.ProductUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductUnit">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_28">
+          <End Role="ProductBase" Type="PosModel.ProductBase" Multiplicity="0..1" />
+          <End Role="Product" Type="PosModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductBase">
+              <PropertyRef Name="ProductBaseId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductBaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_9">
+          <End Role="Product" Type="PosModel.Product" Multiplicity="1" />
+          <End Role="ProductPremise" Type="PosModel.ProductPremise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductPremise">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_56">
+          <End Role="ProductMovement" Type="PosModel.ProductMovement" Multiplicity="0..1" />
+          <End Role="SaleDetails" Type="PosModel.SaleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductMovement">
+              <PropertyRef Name="ProductMovementId" />
+            </Principal>
+            <Dependent Role="SaleDetails">
+              <PropertyRef Name="ProductMovementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_11">
+          <End Role="ProductPremise" Type="PosModel.ProductPremise" Multiplicity="0..1" />
+          <End Role="ProductPremiseStatus" Type="PosModel.ProductPremiseStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductPremise">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="PremiseId" />
+            </Principal>
+            <Dependent Role="ProductPremiseStatus">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="PremiseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_102">
+          <End Role="Unit" Type="PosModel.Unit" Multiplicity="1" />
+          <End Role="ProductUnit" Type="PosModel.ProductUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="ProductUnit">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_47">
+          <End Role="Sale" Type="PosModel.Sale" Multiplicity="1" />
+          <End Role="SaleDocument" Type="PosModel.SaleDocument" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="SaleId" />
+            </Principal>
+            <Dependent Role="SaleDocument">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_50">
+          <End Role="Session" Type="PosModel.Session" Multiplicity="0..1" />
+          <End Role="Sale" Type="PosModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Session">
+              <PropertyRef Name="SessionId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="SessionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_46">
+          <End Role="SaleDocument" Type="PosModel.SaleDocument" Multiplicity="0..1" />
+          <End Role="SaleDetails" Type="PosModel.SaleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleDocument">
+              <PropertyRef Name="SaleId" />
+            </Principal>
+            <Dependent Role="SaleDetails">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_8">
+          <End Role="User" Type="PosModel.User" Multiplicity="0..1" />
+          <End Role="Session" Type="PosModel.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Session">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserSystemRole">
+          <End Role="User" Type="PosModel.User" Multiplicity="*" />
+          <End Role="SystemRole" Type="PosModel.SystemRole" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PosModelStoreContainer" CdmEntityContainer="PosDbContext">
+          <EntitySetMapping Name="Cashbox">
+            <EntityTypeMapping TypeName="PosModel.Cashbox">
+              <MappingFragment StoreEntitySet="Cashbox">
+                <ScalarProperty Name="CashboxId" ColumnName="CashboxId" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CurrentAmount" ColumnName="CurrentAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CashboxStatus">
+            <EntityTypeMapping TypeName="PosModel.CashboxStatus">
+              <MappingFragment StoreEntitySet="CashboxStatus">
+                <ScalarProperty Name="CBStatusId" ColumnName="CBStatusId" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartAmount" ColumnName="StartAmount" />
+                <ScalarProperty Name="EndAmount" ColumnName="EndAmount" />
+                <ScalarProperty Name="CashboxId" ColumnName="CashboxId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CashboxTestify">
+            <EntityTypeMapping TypeName="PosModel.CashboxTestify">
+              <MappingFragment StoreEntitySet="CashboxTestify">
+                <ScalarProperty Name="CashboxId" ColumnName="CashboxId" />
+                <ScalarProperty Name="CashboxTestifyId" ColumnName="CashboxTestifyId" />
+                <ScalarProperty Name="TestifyDate" ColumnName="TestifyDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AmountChecked" ColumnName="AmountChecked" />
+                <ScalarProperty Name="Difference" ColumnName="Difference" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="CBStatusId" ColumnName="CBStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CashMovement">
+            <EntityTypeMapping TypeName="PosModel.CashMovement">
+              <MappingFragment StoreEntitySet="CashMovement">
+                <ScalarProperty Name="CashboxId" ColumnName="CashboxId" />
+                <ScalarProperty Name="CashMovementId" ColumnName="CashMovementId" />
+                <ScalarProperty Name="MovementDate" ColumnName="MovementDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MovementType" ColumnName="MovementType" />
+                <ScalarProperty Name="MovementStatus" ColumnName="MovementStatus" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="MovementCategory" ColumnName="MovementCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="PosModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="PosModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="LegalName" ColumnName="LegalName" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Division">
+            <EntityTypeMapping TypeName="PosModel.Division">
+              <MappingFragment StoreEntitySet="Division">
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="PosModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneralConfigValues">
+            <EntityTypeMapping TypeName="PosModel.GeneralConfigValues">
+              <MappingFragment StoreEntitySet="GeneralConfigValues">
+                <ScalarProperty Name="ConfigId" ColumnName="ConfigId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MiscVariant">
+            <EntityTypeMapping TypeName="PosModel.MiscVariant">
+              <MappingFragment StoreEntitySet="MiscVariant">
+                <ScalarProperty Name="MiscVariantId" ColumnName="MiscVariantId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="PosModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DocNumber" ColumnName="DocNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Premise">
+            <EntityTypeMapping TypeName="PosModel.Premise">
+              <MappingFragment StoreEntitySet="Premise">
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PremiseType" ColumnName="PremiseType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="PosModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductBaseId" ColumnName="ProductBaseId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="MiscVariantId" ColumnName="MiscVariantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductBase">
+            <EntityTypeMapping TypeName="PosModel.ProductBase">
+              <MappingFragment StoreEntitySet="ProductBase">
+                <ScalarProperty Name="ProductBaseId" ColumnName="ProductBaseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SaleDefaultUnitAbbr" ColumnName="SaleDefaultUnitAbbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductMovement">
+            <EntityTypeMapping TypeName="PosModel.ProductMovement">
+              <MappingFragment StoreEntitySet="ProductMovement">
+                <ScalarProperty Name="ProductMovementId" ColumnName="ProductMovementId" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+                <ScalarProperty Name="MovementType" ColumnName="MovementType" />
+                <ScalarProperty Name="MovementCategory" ColumnName="MovementCategory" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MovementDate" ColumnName="MovementDate" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPremise">
+            <EntityTypeMapping TypeName="PosModel.ProductPremise">
+              <MappingFragment StoreEntitySet="ProductPremise">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+                <ScalarProperty Name="CurrentStock" ColumnName="CurrentStock" />
+                <ScalarProperty Name="MinimunStock" ColumnName="MinimunStock" />
+                <ScalarProperty Name="StockDefaultUnitAbbr" ColumnName="StockDefaultUnitAbbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPremiseStatus">
+            <EntityTypeMapping TypeName="PosModel.ProductPremiseStatus">
+              <MappingFragment StoreEntitySet="ProductPremiseStatus">
+                <ScalarProperty Name="PPStatusId" ColumnName="PPStatusId" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartQuantity" ColumnName="StartQuantity" />
+                <ScalarProperty Name="EndQuantity" ColumnName="EndQuantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductUnit">
+            <EntityTypeMapping TypeName="PosModel.ProductUnit">
+              <MappingFragment StoreEntitySet="ProductUnit">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sale">
+            <EntityTypeMapping TypeName="PosModel.Sale">
+              <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="CashMovementId" ColumnName="CashMovementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleDetails">
+            <EntityTypeMapping TypeName="PosModel.SaleDetails">
+              <MappingFragment StoreEntitySet="SaleDetails">
+                <ScalarProperty Name="SaleDetailId" ColumnName="SaleDetailId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SinglePrice" ColumnName="SinglePrice" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+                <ScalarProperty Name="ProductMovementId" ColumnName="ProductMovementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleDocument">
+            <EntityTypeMapping TypeName="PosModel.SaleDocument">
+              <MappingFragment StoreEntitySet="SaleDocument">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="IGV" ColumnName="IGV" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Session">
+            <EntityTypeMapping TypeName="PosModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="PremiseId" ColumnName="PremiseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemRole">
+            <EntityTypeMapping TypeName="PosModel.SystemRole">
+              <MappingFragment StoreEntitySet="SystemRole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unit">
+            <EntityTypeMapping TypeName="PosModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitEquivalence">
+            <EntityTypeMapping TypeName="PosModel.UnitEquivalence">
+              <MappingFragment StoreEntitySet="UnitEquivalence">
+                <ScalarProperty Name="UnitEquivalenceId" ColumnName="UnitEquivalenceId" />
+                <ScalarProperty Name="LowerUnitAbbr" ColumnName="LowerUnitAbbr" />
+                <ScalarProperty Name="HigherUnitAbbr" ColumnName="HigherUnitAbbr" />
+                <ScalarProperty Name="EquivalenceFactor" ColumnName="EquivalenceFactor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="PosModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DefaultPremise" ColumnName="DefaultPremise" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserSystemRole" TypeName="PosModel.UserSystemRole" StoreEntitySet="UserSystemRole">
+            <EndProperty Name="User">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="SystemRole">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="4.0"
+         DefaultTargets="Test">
+  
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  </PropertyGroup>
+  
+  <ItemGroup>    
+    <BuildArtifacts Include=".\buildartifacts\"/>
+    <SolutionFile Include=".\CV.POS.sln"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <NUnit Include=".\thirdparty\tools\NUnit\nunit-console.exe"/>
+    <TestAssembly Include=".\buildartifacts\CV.POS.Wpf.Unit.dll"/>
+    <TestResults Include=".\buildartifacts\TestResults.xml"/>
+  </ItemGroup>
+  
+  <!--Targets-->
+  <Target Name="Clean">
+    <RemoveDir Directories="@(BuildArtifacts)"/>
+  </Target>
+  
+  <Target Name="Init" DependsOnTargets="Clean">
+    <MakeDir Directories="@(BuildArtifacts)"/>
+  </Target>
+
+  <Target Name="Compile" DependsOnTargets="Init">
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="OutDir=%(BuildArtifacts.FullPath);Configuration=$(Configuration)"/>
+  </Target>
+  
+  <Target Name="Test" DependsOnTargets="Compile">
+    <Exec Command="@(NUnit) @(TestAssembly) /xml=@(TestResults)"/>
+  </Target>
+
+</Project>

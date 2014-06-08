@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="CV.POS.Wpf.View.Login.MainLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:CV.POS.Wpf.Controls"
+             mc:Ignorable="d" Height="437" Width="606">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <!--FocusManager.FocusedElement="{Binding ElementName=controls:BasicLogin}"-->
+        <Label Content="Iniciar Sesión" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Grid.Row="1" Margin="185,13,0,0" RenderTransformOrigin="0.314,0.484"/>
+        <controls:BasicLogin x:Name="LoginPart" KeyboardNavigation.TabNavigation="Local" Grid.Column="1" Grid.Row="2" Margin="0,0,0,148"/>
+        
+    </Grid>
+</UserControl>
