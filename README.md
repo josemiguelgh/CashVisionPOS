@@ -1,7 +1,7 @@
 CashVisionPOS
 =============
 
-Sample POS application made with WPF and MVVMLight as a help to developers who want to learn these technologies.
+Sample POS application made with WPF and MVVMLight to help developers who want to learn these technologies.
 
 Application made with VS2012 and using SQL Server 2012.
 
